@@ -8,7 +8,7 @@ pipeline {
 
     triggers {
         cron '''TZ=Australia/Sydney
-        H H(9-17)/3 * * 1-7'''
+        H H(9-22)/1 * * 1-7'''
     }
 	
     tools {nodejs "NodeJS"}
@@ -57,7 +57,7 @@ pipeline {
 
             steps {
                 echo "Deploying to UAT"
-                withAWS(credentials: 'aws_pn', region: 'ap-southeast-2') {
+                withAWS(credentials: 'ubuntu-slave', region: 'ap-southeast-2') {
                     //clean the bucket
                     sh 'aws s3 rm s3://uat.petnanny.link --recursive'
                     //copy the all files
