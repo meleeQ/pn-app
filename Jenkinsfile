@@ -59,9 +59,9 @@ pipeline {
                 echo "Deploying to UAT"
                 withAWS(credentials: 'aws_pn', region: 'ap-southeast-2') {
                     //clean the bucket
-                    sh 'aws s3 rm s3://uat.petnanny.live --recursive'
+                    sh 'aws s3 rm s3://uat.petnanny.link --recursive'
                     //copy the all files
-                    sh 'aws s3 sync ./build s3://uat.petnanny.live'
+                    sh 'aws s3 sync ./build s3://uat.petnanny.link'
                 }
             }
         }
