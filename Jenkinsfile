@@ -1,6 +1,10 @@
 pipeline {
 
-    agent any  
+    agent {
+        node {
+            label 'ubuntu-slave'
+        }
+    }
 
     environment {
         CI = 'false'
