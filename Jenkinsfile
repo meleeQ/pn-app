@@ -14,8 +14,6 @@ pipeline {
         cron '''TZ=Australia/Sydney
         H H(9-22)/1 * * 1-7'''
     }
-	
-    tools {nodejs "NodeJS"}
 
     stages {
         stage('Install') {
