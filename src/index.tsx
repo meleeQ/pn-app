@@ -13,7 +13,6 @@ root.render(
     <Chakra>
       <Provider store={store}>
         <App />
-        <>Me</>
       </Provider>
     </Chakra>
   </React.StrictMode>
