@@ -1,6 +1,10 @@
 pipeline {
 
     agent any
+	
+    tools {
+        nodejs 'nodejs-18.15.0'
+    }
 
     environment {
         CI = 'false'
@@ -10,6 +14,8 @@ pipeline {
         cron '''TZ=Australia/Sydney
         H H(9-22)/1 * * 1-7'''
     }
+	
+	
 
     stages {
         stage('Install') {
